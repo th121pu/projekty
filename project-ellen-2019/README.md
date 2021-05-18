@@ -1,0 +1,1 @@
+Hra v Jave pre predmet Objektovo orientované programovanie.

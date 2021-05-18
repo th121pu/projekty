@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="60" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="67">
+ <tileset firstgid="1" name="tileset1" tilewidth="16" tileheight="16" tilecount="500" columns="20">
+  <image source="tilesets/tileset01.png" width="320" height="400"/>
+ </tileset>
+ <tileset firstgid="501" name="tileset2" tilewidth="16" tileheight="16" tilecount="500" columns="20">
+  <image source="tilesets/tileset02.png" width="320" height="400"/>
+ </tileset>
+ <layer id="6" name="background" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer id="3" name="walls" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eAHtWFtOwzAQrDg6P9yAH04AiCsgFW7AB1wHj9RRV9bITbx2XNkbydpl6pl9JcXp+eF0Oqf1dbFbfezbuhfae/Vr9yse43+kPLBaXK10mItXT/GBKZwx99hWOozp1VN8YApnzD22lQ5jevUUH5jCGXOPbaXDmF49xQemcMaczUa99RNtfZ949RS/5XyVfn33/M+ZyifqrZ+I6me92jHz5RmRlucw+3etb3nsg8Xg8yyo4gLjlfMsl77qf34/qz2Mcct6uErbq6f4wCxufZVDCfNwla5XT/GBWdz6KocS5uEqXa+e4gOzuPVVDiXMw1W6Xj3FB6ZwFf9ozJuX4q9er+rJ1rl6uCqGV0/xgVnc+iqHEubhKl2vnuIDs7j1VQ4lzMNVul49xQeGxfNKbnne4ZmFeXFffg7iPlqrTa3ccq/Vgp9zvxOGVYrNz2ih85fW78WyXtbR2kL/iOstxXlP6zUt+rQWm6Xe51Tnlt7OUi9m+ZTWrWuWej9TrS8L1cvvslXm+5hmu9LzG99X+s6O7yvdl1p0yzNVq2158fzablz9We7n1c4bP+n/Ed8JaBU203xXel+4PqFlb5b5lqu8fsp6+X5sLd6V7d/WL31m98G/p4v13lNOPXOJent2d7x2zHf8DHpmEPPt2d3x2jHf8TPomUHMt2d3x2vHfMfPoGcGMd+e3R2vHfMdP4OeGcR8e3Z3vPaK8+Xva/Y3uCP9vfF5l+zlYT/q+gcCWV9y
+  </data>
+ </layer>
+ <objectgroup id="4" name="actors">
+  <object id="6" name="energy" x="874.667" y="395" width="16" height="16"/>
+  <object id="7" name="ammo" x="630" y="312" width="16" height="16"/>
+  <object id="9" name="ellen" type="ripley" x="900.667" y="274" width="32" height="32"/>
+  <object id="10" name="hunter" type="hunting" x="899.333" y="102.667" width="32" height="32"/>
+  <object id="13" name="alien" type="waiting1" x="655" y="39" width="32" height="32"/>
+  <object id="20" name="alien" type="waiting1" x="727" y="39" width="32" height="32"/>
+  <object id="21" name="alien" type="waiting1" x="809" y="36" width="32" height="32"/>
+  <object id="22" name="alien" type="waiting1" x="660" y="91" width="32" height="32"/>
+  <object id="23" name="alien" type="waiting1" x="730" y="87" width="32" height="32"/>
+  <object id="24" name="alien" type="waiting1" x="802" y="86" width="32" height="32"/>
+  <object id="25" name="alien" type="waiting1" x="732" y="134" width="32" height="32"/>
+  <object id="26" name="alien" type="waiting1" x="643" y="212" width="32" height="32"/>
+  <object id="27" name="alien" type="waiting1" x="642" y="275" width="32" height="32"/>
+  <object id="28" name="front door" type="vertical" x="864" y="80" width="16" height="32"/>
+  <object id="29" name="shield" x="914.5" y="45.5" width="16" height="16"/>
+  <object id="30" name="ammo" x="828.667" y="216" width="16" height="16"/>
+  <object id="31" name="hunt door" type="vertical" x="608" y="80.3333" width="16" height="32"/>
+  <object id="32" name="door" type="vertical" x="287.5" y="79.5" width="16" height="32"/>
+  <object id="33" name="door" type="vertical" x="48" y="256" width="16" height="32"/>
+  <object id="34" name="door" type="vertical" x="288" y="256" width="16" height="32"/>
+  <object id="35" name="hunter" type="wait" x="337.333" y="212.667" width="32" height="32"/>
+  <object id="36" name="hunter" type="wait" x="560" y="214" width="32" height="32"/>
+  <object id="37" name="hunter" type="wait" x="454.667" y="282.667" width="32" height="32"/>
+  <object id="38" name="hunter" type="wait" x="392.667" y="36.6667" width="32" height="32"/>
+  <object id="39" name="hunter" type="wait" x="536" y="34" width="32" height="32"/>
+  <object id="40" name="hunter" type="wait" x="468" y="114.667" width="32" height="32"/>
+  <object id="41" name="energy" x="244" y="197" width="16" height="16"/>
+  <object id="42" name="fire" x="72" y="237.333" width="64" height="64"/>
+  <object id="44" name="fire" x="223" y="258" width="64" height="64"/>
+  <object id="45" name="fire" x="71.6667" y="199.333" width="64" height="64"/>
+  <object id="46" name="fire" x="72" y="266.667" width="64" height="64"/>
+  <object id="47" name="fire" x="222" y="216" width="64" height="64"/>
+  <object id="48" name="firecar" x="166.667" y="238.333" width="32" height="32"/>
+  <object id="52" name="boss" x="464" y="808" width="39" height="64"/>
+  <object id="54" name="hugoboss" x="245.502" y="420.233" width="39" height="64" rotation="-10.8285"/>
+  <object id="55" name="hugo door" type="horizontal" x="175" y="336" width="32" height="16"/>
+  <object id="56" name="energy" x="658" y="503.333" width="16" height="16"/>
+  <object id="57" name="energy" x="858.667" y="660" width="16" height="16"/>
+  <object id="58" name="energy" x="216" y="754" width="16" height="16"/>
+  <object id="59" name="ammo" x="875.333" y="474.667" width="16" height="16"/>
+  <object id="60" name="ammo" x="917.333" y="504.667" width="16" height="16"/>
+  <object id="61" name="ammo" x="908.667" y="672.667" width="16" height="16"/>
+  <object id="62" name="ammo" x="461.333" y="374.667" width="16" height="16"/>
+  <object id="63" name="shield" x="714" y="397.333" width="16" height="16"/>
+  <object id="64" name="ammo" x="44.6667" y="647.333" width="16" height="16"/>
+  <object id="65" name="access card" x="354" y="304" width="16" height="16"/>
+  <object id="66" name="hammer" x="574" y="306" width="16" height="16"/>
+ </objectgroup>
+</map>

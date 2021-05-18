@@ -1,0 +1,29 @@
+html{
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    color: black;
+}
+
+body {
+    max-width: 95%;
+}
+
+a:visited {
+    color: black;
+}
+
+a {
+    color: black;
+}
+nav, aside {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 50%;
+    filter: grayscale(100%);
+}

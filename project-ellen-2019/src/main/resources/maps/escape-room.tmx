@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="41">
+ <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" tilecount="500" columns="20">
+  <image source="tilesets/tileset01.png" width="320" height="400"/>
+ </tileset>
+ <tileset firstgid="501" name="tileset2" tilewidth="16" tileheight="16" tilecount="500" columns="20">
+  <image source="tilesets/tileset02.png" width="320" height="400"/>
+ </tileset>
+ <layer id="1" name="background" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECq2WS8iVVRSGD92LjAIHldRvNKggK81mgjowm0RKOsiEpBS6/erAWxR0Ucign6zEEhVyVmloXiuosKgsKCgyJxropIalFRlZPQ99Lyw25/w2aPCw17e+tde799prf+f8dVavdwA+go9HsU+XmNHiaq46p/r/JtdbcBVM6Ubtiv4R2Nj4a8wge9AcNeUGuB3mwV1n93qzYDb4/BpshaxvCHs8TIJbYTJcDf38Y8mROO07iLsGWt2Z+B7g/UJY1MXtwbe3i3Vf0XKdxpsruV1D9auVZ+35vL8Nqq7zjVnJ+1XwGJj3IHwO2W+0rMUjxDwKT3Wx5tB/L6hhnVd0z0sYl8JciK77SL6sL+s4wrujXaxx16Mhi7GTq2pVv7oTS5w5a519F732fH/i3c+Q/UbrQbQfaniY53rW6s6AnH1bZ99Ft56vOc4h17lwGXgXUhftM3Epc+4hLj1hndv9pq7t+V7O3CtgPExh3uPwBGhb90G4F2s0DOmDJ8nhGtrznYp/GkwH9y83GguThWep/TuanbNJn7V1zvneTe45MBe8o9bEnrHeokb6KvXO+aRe+tfCc6Bu7au2n61JnRf7IPragzRSvxnEqZ++3oy9BdQ1d+ZnbOusv9/6W5/PFfVSF3t3J7wN5revUueM0U2ds57RdBITrejlHNK7fl/NPwy5exmjO6jO0cjYrqefP74j6P0A9a7lNy+63oXE1/rFbvu8xlbb+OdhBOz/+xnvZLTmuzp2M0Y3dXaedfuzG1PL9HnVt9+tredZ462vmlmzdf+E5087PmOM7n+tc/S9Z+09zl37HZ2s1++AullDxui2dbZ2tX7Vdm59jn0ADWt8MWN8iY1e/Or+CGfab+bl7F5izjp4AdZD/Fux/Z5GL9+B6CWPup6t+G5sNyfvM6Zunt3r4H3w+zkBboKbYRLkezpIL3nUVc/eMFbdrP1K7HHwIn739zIM8WzP9Mtb9zTIdh9qq3sIvgX/Fywnp/fOemUft+CbCNmLfWK/RNtc+R2pevrvg7Zm9p+6z3SjvbUP9sM78C68B85zPdGZg20/60/d1Ev++K/Dd23v3/0Yl373t0XdDd3oGX8Bp+AP+BK+AvWWoLMU/I1M3ppLX92r64yu+8ldMsZ7r+6b8CzY09/DGOZcAsewj8My7NWwBtxr1XPtklpU7aobv/oLQN0PYBP4u3ECTsIv8Cv8BmvRqnvsp5G8tS5V19+h1GQZtrrfwA4YhvPQOB8ugAvhInB/dY+DdN1LrUvVrf8xs1/rrPZ3cLiM9nl8/6dtrq/hDVB7W2Nv5/lVeBrs+dWwBt4Hz+bDMrYx9uorkLzmamP+AVWmyOIQDgAA
+  </data>
+ </layer>
+ <layer id="2" name="walls" width="30" height="30" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2U0QqAIAxFhf7//6KiZz8j78OFIQ4Np5ImjKXpznZb+s05P8hcwUBub4d2hnWWxNNilJyN98zK1TRqXe/XuTJ/apXzcU9hzjOpdxZrMk8ZbzbuHu4YWO96V+Oyh3rrLLns3ZTnvlb+CD0mjTm04mlxf66mjO06dB4xRnLBvjvXDSbvUurN+VmZC/7XS4kRc8mEB7eGneOSjXpX48qaazRGnFKdqbG8vy2eGVd6fFtLi/NEP2vxH6pOvr4QDgAA
+  </data>
+ </layer>
+ <objectgroup id="3" name="actors" visible="0">
+  <object id="1" name="ellen" type="ripley" x="416" y="192" width="32" height="32"/>
+  <object id="2" name="alien" type="waiting1" x="192" y="32" width="32" height="32"/>
+  <object id="3" name="front door" type="vertical" x="368" y="32" width="16" height="32"/>
+  <object id="4" name="back door" type="horizontal" x="192" y="112" width="32" height="16"/>
+  <object id="5" name="alien" type="running" x="416" y="32" width="32" height="32"/>
+  <object id="6" name="alien" type="waiting1" x="240" y="32" width="32" height="32"/>
+  <object id="7" name="alien" type="waiting1" x="288" y="32" width="32" height="32"/>
+  <object id="8" name="alien" type="waiting1" x="192" y="80" width="32" height="32"/>
+  <object id="9" name="alien" type="waiting1" x="240" y="80" width="32" height="32"/>
+  <object id="10" name="alien" type="waiting1" x="288" y="80" width="32" height="32"/>
+  <object id="11" name="alien" type="waiting1" x="336" y="32" width="32" height="32"/>
+  <object id="12" name="alien" type="waiting1" x="336" y="80" width="32" height="32"/>
+  <object id="13" name="ammo" x="400" y="144" width="16" height="16"/>
+  <object id="14" name="ammo" x="48" y="64" width="16" height="16"/>
+  <object id="15" name="energy" x="224" y="64" width="16" height="16"/>
+  <object id="16" name="exit door" type="vertical" x="0" y="320" width="16" height="32"/>
+  <object id="17" name="alien mother" type="waiting2" x="112" y="224" width="78" height="127"/>
+  <object id="18" name="alien" type="waiting2" x="304" y="416" width="32" height="32"/>
+  <object id="19" name="energy" x="416" y="432" width="16" height="16"/>
+ </objectgroup>
+</map>

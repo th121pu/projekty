@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="809910570731-27fhhcggsat9giqaqoeo6h0b5hk8fvfs.apps.googleusercontent.com"
+          name="google-signin-client_id">
+    <title>NHL</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" media="screen" rel="stylesheet">
+    <link href="css/print.css" media="print" rel="stylesheet">
+    <link href="css/noLayout.css" media="print" rel="stylesheet">
+</head>
+
+
+<body>
+<nav class="main">
+    <div class="one">
+        <img alt="logo" class="smalllogo" src="img/logo.png">
+    </div>
+
+    <div class="bar">
+        <div>
+            <a href="#welcome"> ÚVOD</a>
+        </div>
+        <div>
+            <a href="#tabulka">TABUĽKA</a>
+        </div>
+        <div>
+            <a href="#vysledky">VÝSLEDKY</a>
+        </div>
+        <div>
+            <a href="#ostatne">OSTATNÉ</a>
+        </div>
+    </div>
+
+    <div class="last">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <button id= "signOutB" onclick="signOut()">Odhlásiť sa</button>
+            <span id="userName"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="flex">
+    <aside class="left">
+        <article class="zoznam sidebar">
+            <h3>Najnovšie články:</h3>
+
+            <ul>
+                <li><img alt="foto zo zapasu" src="img/nhl1.png" title="foto zo zapasu">
+
+                    <a href="#article1">
+                        <h4>Christián Jaroš bodoval, Columbus ale zdolal Ottawu po predĺžení </h4>
+                        <h5><span class="date"> 25.2.2020 06:30 | </span> Slovenský obranca Christián Jaroš si pripísal
+                            v
+                            NHL asistenciu, jeho Ottawa však prehrala v noci na utorok na ľade Columbusu 3:4 po
+                            predĺžení.
+                        </h5>
+                    </a>
+
+                </li>
+                <li><img alt="foto nhl" src="img/nhl3.png" title="foto nhl">
+                    <a href="#article2">
+                        <h4>Výsledky nočných zápasov zámorskej NHL (26. február 2020) </h4>
+
+                        <h5><span class="date"> 25.2.2020 23:41 | </span> Zámorská NHL mala dnes v noci na programe
+                            ďalšie zápasy základnej časti. </h5>
+
+                    </a></li>
+                <li><img alt="foto brankara" src="img/nhl4.png" title="foto brankara">
+                    <a href="#article3">
+                        <h4>Caroline chýbajú brankári. Trio Mrázek, Reimer a Pesce bude mimo hry dlhšiu dobu
+                        </h4>
+                        <h5><span class="date"> 25.2.2020 08:41 | </span> Hokejovému tímu Carolina Hurricanes
+                            budú
+                            dlhší čas chýbať brankári Petr Mrázek, James Reimer a obranca Brett Pesce. Všetci traja sa
+                            zranili vo
+                            víkendovom víťaznom zápase NHL na ľade Toronta (6:3). </h5>
+
+
+                    </a></li>
+            </ul>
+        </article>
+    </aside>
+    <div class="wrap">
+        <main id="router-view"></main>
+    </div>
+
+    <aside class="right">
+        <h3>Video dňa</h3>
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                src="https://www.youtube.com/embed/6CERSwpawcc"></iframe>
+    </aside>
+</div>
+
+
+<script id="template-welcome" type="text/template">
+
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+    <article>
+
+        <p>Táto stránka prináša aktuálne informácie o dianí v zámorksej NHL. Nájdete tu výsledky zápasov,
+            rozohovy s hráčmi, tabuľky a ďalšie zaujímavosti zo sveta hokeja. Okrem iného sa stránka
+            sústredi hlavne na Slovákov v NHL.</p>
+
+        <p>Moje meno je Tomáš Halgaš a študujem informatiku na TUKE.</p>
+
+
+        <article class="zoznam">
+            <h3>Najnovšie články:</h3>
+
+            <ul>
+                <li><img src="img/nhl1.png" alt="foto zo zapasu" title="foto zo zapasu">
+
+                    <a href="#article1">
+                        <h4>Christián Jaroš bodoval, Columbus ale zdolal Ottawu po predĺžení </h4>
+                        <h5><span class="date"> 25.2.2020 06:30 | </span> Slovenský obranca Christián Jaroš si
+                            pripísal v
+                            NHL asistenciu, jeho Ottawa však prehrala v noci na utorok na ľade Columbusu 3:4 po
+                            predĺžení.
+                        </h5>
+                    </a>
+
+                </li>
+                <li><img src="img/nhl3.png" alt="foto nhl" title="foto nhl">
+                    <a href="#article2">
+                        <h4>Výsledky nočných zápasov zámorskej NHL (26. február 2020) </h4>
+                        <h5><span class="date"> 25.2.2020 23:41 | </span> Zámorská NHL mala dnes v noci na
+                            programe ďalšie zápasy základnej časti. </h5>
+
+
+                    </a></li>
+                <li><img src="img/nhl4.png" alt="foto brankara" title="foto brankara">
+                    <a href="#article3">
+                        <h4>Caroline chýbajú brankári. Trio Mrázek, Reimer a Pesce bude mimo hry dlhšiu dobu
+                        </h4>
+                        <h5><span class="date"> 25.2.2020 08:41 | </span> Hokejovému tímu Carolina Hurricanes
+                            budú
+                            dlhší čas chýbať brankári Petr Mrázek, James Reimer a obranca Brett Pesce. Všetci
+                            traja sa zranili vo
+                            víkendovom víťaznom zápase NHL na ľade Toronta (6:3). </h5>
+
+                    </a></li>
+            </ul>
+
+        </article>
+
+    </article>
+</script>
+
+<script id="template-articles" type="text/template">
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+
+    {{#.}}
+    <article>
+        <h2 class="titleArt"><a href="{{detailLink}}">{{title}}</a></h2>
+        <p class="author">
+            by {{author}}
+        </p>
+        <div>
+            {{{content}}}
+        </div>
+    </article>
+    {{/.}}
+
+    <nav class="nextAndPrev">
+        {{#prevPage}}
+        <a href="#articles/{{prevPage}}/{{pageCount}}" class="prevArt"><< Predchádzajúca stránka</a>
+        {{/prevPage}}
+
+
+        {{#nextPage}}
+        <a href="#articles/{{nextPage}}/{{pageCount}}" class="nextArt">Nasledujúca stránka >></a>
+        {{/nextPage}}
+    </nav>
+
+
+</script>
+
+<script id="template-articles-error" type="text/template">
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <article>
+        <h2>Articles acquisition failed</h2>
+        <p>
+            {{errMessage}}
+        </p>
+    </article>
+
+
+</script>
+
+<script id="template-opinions" type="text/template">
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a id="addLink" href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <article id="artOpinions">
+        <h2>Názory užívateľov</h2>
+        {{#.}}
+        <section class="comments">
+            <div class="content">
+                <span class="nameDate"> <h3>{{name}} </h3><i>{{createdDate}}</i></span>
+                <a class="mail" href=mailto:{{mail}}>{{mail}}</a>
+            </div>
+
+            <div class="content2">
+                <p class="comment">
+                    <b>Komentár:</b>
+                    {{comment}}
+                </p>
+
+                {{#url}}
+                <p class="url">
+                <p class="url">
+                    <b>URL:</b>
+                    <a href="{{url}}">{{url}}</a>
+                </p>
+                {{/url}}
+
+                {{#choice}}
+                <p class="choice">
+                    <b>Obľúbená sekcia:</b>
+                    {{choice}}
+                </p>
+                {{/choice}}
+
+                <p class="rating">
+                    <b>Stránku hodnotím:</b>
+                    {{createdRating}}
+                </p>
+
+                {{#wantImpr}}
+                <p class="improve">
+                    <b> {{wantImpr}}</b>
+                    {{#dizajn}}
+                    {{dizajn}}
+                    {{/dizajn}}
+
+                    {{#obsah}}
+                    {{obsah}}
+                    {{/obsah}}
+
+                    {{#akt}}
+                    {{akt}}
+                    {{/akt}}
+                </p>
+                {{/wantImpr}}
+
+                {{^wantImpr}}
+                <p class="improve">
+                    <b>Chcem zlepšiť:</b>
+                    Nič
+                </p>
+                {{/wantImpr}}
+            </div>
+        </section>
+        {{/.}}
+        {{^.}}
+        <section>
+            Sorry, no opinions found.
+        </section>
+        {{/.}}
+        <div class="buttons">
+            <button class="dateReset" id="resetId" onclick="deleteOld()">Len dnešné</button>
+        </div>
+
+    </article>
+</script>
+
+<script id="template-addOpinion" type="text/template">
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <form id="formular" onsubmit="return processFormular(event)">
+
+        <h3>Dotazník spokojnosti</h3>
+
+        <label for="menoElm">Meno<span class="req">*</span></label>
+
+        <input type="text" id="menoElm" name="meno" required minlength="3" maxlength="30" size="25"
+               placeholder="Vaše meno">
+
+        <br><br>
+
+        <label for="emailElm">Email<span class="req">*</span></label>
+
+        <input type="email" id="emailElm" name="mail" size="25" required placeholder="Váš email">
+
+        <br><br>
+
+        <label for="urlElm">URL</label>
+
+        <input type="url" name="url" id="urlElm" placeholder="https://www.google.com/" size="25">
+
+        <br><br>
+
+        <label for="commentElm">Názor<span class="req">*</span></label>
+
+        <textarea name="comment" id="commentElm" cols="50" rows="3" required
+                  placeholder="Sem napíšte komentár" minlength="2"></textarea>
+
+        <br><br>
+
+        <label class="longer" for="rating0Elm">Ako hodnodíte túto stránku?</label>
+        <input class="check" type="radio" id="rating0Elm" name="rating" value="0" checked/>
+        <label class="shorter" for="rating0Elm">Výborná</label>
+        <input class="check" type="radio" id="rating1Elm" name="rating" value="1"/>
+        <label class="shorter" for="rating1Elm">Dobrá</label>
+        <input class="check" type="radio" id="rating2Elm" name="rating" value="2"/>
+        <label class="shorter" for="rating2Elm">Nedostatočná</label>
+
+        <br><br>
+
+
+        <label class="longer" for="impr1Elm">Ná stránke by ste zlepšili?</label>
+
+        <input class="check" type="checkbox" id="impr1Elm" name="imprA"/>
+        <label class="shorter" for="impr1Elm">Dizajn</label>
+        <input class="check" type="checkbox" id="impr2Elm" name="imprB"/>
+        <label class="shorter" for="impr2Elm">Obsah článkov</label>
+        <input class="check" type="checkbox" id="impr3Elm" name="imprC"/>
+        <label class="shorter" for="impr3Elm">Aktuálnosť </label>
+
+
+        <br><br>
+
+        <label class="longer" for="section-choice">Vyberte vašu obľúbenú sekciu</label>
+        <input class="check" type="text" list="sections" id="section-choice" name="section-choice"/>
+
+        <datalist id="sections">
+            <option value="ÚVOD">
+            <option value="ČLÁNKY">
+            <option value="TABUĽKA">
+            <option value="VÝSLEDKY">
+            <option value="OSTATNÉ">
+        </datalist>
+
+        <br><br>
+
+        <div class="buttons">
+            <button type="reset">Zmazať</button>
+            <button type="submit">Odoslať</button>
+        </div>
+
+    </form>
+</script>
+
+
+<script id="template-article" type="text/template">
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+    {{#nothing}}
+    <h3> {{nothing}} </h3>
+    {{/nothing}}
+
+    {{^nothing}}
+    <article>
+        <h2 class="titleArt">{{title}}</h2>
+        <p class="author">
+            by {{author}}
+        </p>
+        {{#imageLink}}
+        <figure>
+            <img src="{{imageLink}}" alt="article figure"/>
+        </figure>
+        {{/imageLink}}
+        <div>{{{content}}}</div>
+        <p>
+            {{#tagsWithoutCustom}}
+            Kľúčové slová:
+            {{tagsWithoutCustom}}
+            {{/tagsWithoutCustom}}
+        </p>
+    </article>
+
+    <footer class = "tlacitka">
+        <a href="#articles" class="linkAsButton"><< Späť</a>
+        <a href="{{editLink}}" class="linkAsButton backOff">Editovať</a>
+        <a href="{{deleteLink}}" class="linkAsButton">Zmazať</a>
+    </footer>
+
+    <div id="commentsForArticle">
+
+    </div>
+
+
+    <div id="newComment">
+    </div>
+
+    <div class="addedComment">
+        <nav class="nextAndPrev">
+            <a  id="btShowCommentUpload" class=" linkAsButton hideMeCom" onclick="showCommentUpload()">Pridať
+                komentár</a>
+        </nav>
+
+        <div class="comments added hiddenElm" id="fsetCommentUpload">
+
+            <div class="content">
+                <span class="nameDate"> <h3>Nový komentár</h3></span>
+            </div>
+
+            <div class="content2">
+
+                <div class="oneLine">
+                    <label for="commentAuthor"><b>Autor:</b></label>
+                    <input type="text" name="commentAuthor" id="commentAuthor" value="" size="50"
+                           title="Autor komentaru" maxlength="100"
+                           placeholder="napr. Ján Trieska"/>
+                </div>
+
+                <div class="oneLine">
+                    <label for="commentText"><b>Komentár:</b></label>
+                    <textarea class="commentText"
+                              name="commentText" id="commentText" spellcheck="true" lang="sk"
+                              cols="50" rows="10" required
+                              title="Comment content"></textarea>
+                </div>
+
+            </div>
+
+            <nav class="commButt">
+
+                <button type="button" class=" linkAsButton" id="btCommentUpload"
+                        onclick="uploadComment('{{urlBase}}', '{{IDart}}')">
+                    Pridaj komentár
+                </button>
+
+                <button type="button" class=" linkAsButton" id="btCancelCommentUpload" onclick="cancelCommentUpload()">
+                    Zruš
+                </button>
+            </nav>
+        </div>
+    </div>
+    {{/nothing}}
+</script>
+
+<script id="template-comment" type="text/template">
+
+    <h2>Komentáre k článku:</h2>
+    {{#.}}
+    <div class="comments">
+
+
+        <div class="content">
+            <span class="nameDate"> <h3> {{comAuthor}} </h3><i> {{date}}</i></span>
+        </div>
+
+
+        <div class="content2">
+            <p class="comment">
+                <b>Komentár:</b>
+                {{comText}}
+            </p>
+        </div>
+
+        <nav class="nextAndPrev commentMenu">
+
+            {{#prevCom}}
+            <a href="#artComment/{{prevCom}}/{{pocetKomentarov}}" class="prevArt"><< Predošlý komentár</a>
+            {{/prevCom}}
+
+            {{#nextCom}}
+            <a href="#artComment/{{nextCom}}/{{pocetKomentarov}}" class="nextArt">Ďalší komentár >></a>
+            {{/nextCom}}
+        </nav>
+    </div>
+    {{/.}}
+
+
+    {{^.}}
+    <div>
+        Žiadne komentáre sa nenašli.
+    </div>
+    {{/.}}
+
+
+</script>
+
+<script id="template-new-comment" type="text/template">
+
+    <h4 class="komentarPridany">
+        Komentár úspešne pridaný!
+    </h4>
+    <div class="comments">
+        <div class="content">
+            <span class="nameDate"> <h3> {{comAuthor}} </h3><i> {{date}}</i></span>
+        </div>
+
+
+        <div class="content2">
+            <p class="comment">
+                <b>Komentár:</b>
+                {{comText}}
+            </p>
+        </div>
+    </div>
+
+
+</script>
+
+<script id="template-delete-article" type="text/template">
+
+    <p>Článok úspešne zmazaný.</p>
+    <footer>
+        <a href="#articles" class="linkAsButton"><< Späť</a>
+    </footer>
+
+</script>
+
+<script id="template-article-form" type="text/template">
+
+    <header class="welcome">
+        <h1>Vitajte na stránke o NHL</h1>
+
+        <div class="menu">
+            <nav class="subbar">
+                <a href="#welcome">Vitajte</a>
+                <a href="#articles">Články</a>
+                <a href="#artInsert">Pridaj článok</a>
+                <a href="#opinions">Názory návštevníkov</a>
+                <a href="#addOpinion">Pridaj názor</a>
+            </nav>
+
+        </div>
+    </header>
+    <article>
+
+        <h2>{{formTitle}}</h2>
+        <br><br>
+
+        <form id="articleForm" onsubmit="return {{formSubmitCall}}">
+            <div class="oneLine">
+                <label for="author">Autor:</label>
+                <input type="text" name="author" id="author" value="{{author}}" size="50"
+                       title="Article author, max. length 100 characters." maxlength="100"
+                       placeholder="e.g. Ján Trieska"/>
+            </div>
+
+            <div class="oneLine">
+                <label for="title">Titulok:</label>
+                <input type="text" name="title" id="title" value="{{title}}" size="50" maxlength="100"
+                       pattern="\S[\S\s]*" required
+                       title="Article title, mandatory item, max. length: 100 characters, the first character must not be a space."
+                       placeholder="e.g. My story."/>
+            </div>
+
+            <div class="oneLine">
+                <label for="imageLink">Obrázok (url):</label>
+                <input type="url" name="imageLink" id="imageLink" value="{{imageLink}}" size="50"
+                       title="Image URL, max. length 100 characters." maxlength="100"/>
+            </div>
+
+            <button type="button" id="btShowFileUpload" class="hideMe" onclick="showFileUpload()">Nahraj obrázok
+            </button>
+
+            <fieldset class="added hiddenElm" id="fsetFileUpload">
+                <legend>Nahrávanie obrázku</legend>
+                <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+                <br/>
+                <button type="button" id="btFileUpload" onclick="uploadImg('{{urlBase}}')">Pošli obrázok na server
+                </button>
+                <button type="button" id="btCancelFileUpload" onclick="cancelFileUpload()">Zruš nahrávanie</button>
+            </fieldset>
+
+
+            <br>
+            <label for="content">Obsah článku:</label>
+            <textarea class="textik"
+                      name="content" id="content" spellcheck="true" lang="sk"
+                      cols="50" rows="20" required
+                      title="Article content, mandatory item, can be plain text or in HTML.">{{content}}</textarea>
+            <br>
+
+            <div class="oneLine">
+                <label for="tags">Kľúčové slová:</label>
+                <input type="text" name="tags" id="tags" value="{{tagsWithoutCustom}}" size="50"
+                       title="Keyword list, comma separated." placeholder="e.g. village, drama"/>
+            </div>
+            <br>
+            <div class="buttons">
+                <button type="reset">
+                    Resetuj formulár
+                </button>
+                <button type="submit">
+                    {{submitBtTitle}}
+                </button>
+            </div>
+
+        </form>
+
+    </article>
+
+
+    <footer>
+        <a href="{{backLink}}" class="linkAsButton"><< Späť</a>
+    </footer>
+</script>
+
+
+<script id="template-new-article" type="text/template">
+    <h2 class="titleArt">Novo pridaný článok</h2>
+    <p class="artInfo">
+        Váš článok bol úspešne prídaný na server s id={{id}}. Vyzerá takto:
+    </p>
+    <article>
+        <h2 class="titleArt">{{title}}</h2>
+        <p class="author">
+            by {{author}}
+        </p>
+        {{#imageLink}}
+        <figure>
+            <img src="{{imageLink}}" alt="article figure"/>
+        </figure>
+        {{/imageLink}}
+        <div>{{{content}}}</div>
+        <p>
+            {{#tagsWithoutCustom}}
+            Kľúčové slová:
+            {{tagsWithoutCustom}}
+            {{/tagsWithoutCustom}}
+        </p>
+    </article>
+</script>
+
+<script id="template-tabulka" type="text/template">
+
+    <header>
+        <h1>Tabuľky NHL </h1>
+        <h3>(Prejdite kurzorom po obrázku pre zobrazenie)</h3>
+    </header>
+
+    <div class="tabulka">
+        <div class="western">
+
+
+        </div>
+
+        <div class="eastern">
+        </div>
+    </div>
+
+
+    <footer>
+        <p> Dátum: 24.2.2020 | Autor: Tomas Halgas | Email: <a
+                href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom">
+            tomas.halgas11@gmail.com </a> | Zdroj: TASR | Foto: SITA
+            |
+            Video: nhl.com </p>
+    </footer>
+
+</script>
+
+<script id="template-vysledky" type="text/template">
+    <header>
+        <h1>Výsledky </h1>
+    </header>
+    <article class="sumar">
+
+        <h4> Boston Bruins – Ottawa Senators 2:5 (0:1, 1:2, 1:2)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 21. Marchand, 44. Wagner (Kuraly, Lindholm) – 12. Tkachuk M.(Backlund, Hanifin),
+                34.
+                Monahan, 35. Monahan (Tkachuk), 59. Backlund, 60. Backlund (Stone)
+            </li>
+            <li><b>Brankári:</b> Rask - Rittich</li>
+            <li><b>Strely na bránku:</b> 28:31</li>
+            <li> 15.258 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Dallas Stars – Chicago Blackhawks 2:1 (1:0, 1:1, 0:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 16. Pavelski (Radulov, Janmark), 37. Seguin (Perry, Benn) - 28. Kubalík (Kane,
+                Keith)
+            </li>
+            <li><b>Brankári:</b> Chudobin - Crawford</li>
+            <li><b>Strely na bránku:</b> 33:32</li>
+            <li> 18.532 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Columbus Blue Jackets – Ottawa Senators 4:3 pp (1:1, 1:1, 1:1 - 1:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 5. Foligno (Dubois, Nyquist), 33. Foligno (Jenner, Gavrikov), 50. Matteau
+                (Harrington,
+                Stenlund), 65. Bemström (Werenski, Jenner) – 11. C. Brown (Tierney, JAROŠ), 30. C. Brown
+                (Anisimov,
+                Reilly), 50. White (Hawryluk, Peca)
+            </li>
+            <li><b>Brankári:</b> Merzlikins (32. Korpisalo) - Högberg</li>
+            <li><b>Strely na bránku:</b> 45:33</li>
+            <li> 17.518 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Boston Bruins – Ottawa Senators 2:5 (0:1, 1:2, 1:2)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 21. Marchand, 44. Wagner (Kuraly, Lindholm) – 12. Tkachuk M.(Backlund, Hanifin),
+                34.
+                Monahan, 35. Monahan (Tkachuk), 59. Backlund, 60. Backlund (Stone)
+            </li>
+            <li><b>Brankári:</b> Rask - Rittich</li>
+            <li><b>Strely na bránku:</b> 28:31</li>
+            <li> 15.258 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Dallas Stars – Chicago Blackhawks 2:1 (1:0, 1:1, 0:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 16. Pavelski (Radulov, Janmark), 37. Seguin (Perry, Benn) - 28. Kubalík (Kane,
+                Keith)
+            </li>
+            <li><b>Brankári:</b> Chudobin - Crawford</li>
+            <li><b>Strely na bránku:</b> 33:32</li>
+            <li> 18.532 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Columbus Blue Jackets – Ottawa Senators 4:3 pp (1:1, 1:1, 1:1 - 1:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 5. Foligno (Dubois, Nyquist), 33. Foligno (Jenner, Gavrikov), 50. Matteau
+                (Harrington,
+                Stenlund), 65. Bemström (Werenski, Jenner) – 11. C. Brown (Tierney, JAROŠ), 30. C. Brown
+                (Anisimov,
+                Reilly), 50. White (Hawryluk, Peca)
+            </li>
+            <li><b>Brankári:</b> Merzlikins (32. Korpisalo) - Högberg</li>
+            <li><b>Strely na bránku:</b> 45:33</li>
+            <li> 17.518 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Boston Bruins – Ottawa Senators 2:5 (0:1, 1:2, 1:2)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 21. Marchand, 44. Wagner (Kuraly, Lindholm) – 12. Tkachuk M.(Backlund, Hanifin),
+                34.
+                Monahan, 35. Monahan (Tkachuk), 59. Backlund, 60. Backlund (Stone)
+            </li>
+            <li><b>Brankári:</b> Rask - Rittich</li>
+            <li><b>Strely na bránku:</b> 28:31</li>
+            <li> 15.258 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Dallas Stars – Chicago Blackhawks 2:1 (1:0, 1:1, 0:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 16. Pavelski (Radulov, Janmark), 37. Seguin (Perry, Benn) - 28. Kubalík (Kane,
+                Keith)
+            </li>
+            <li><b>Brankári:</b> Chudobin - Crawford</li>
+            <li><b>Strely na bránku:</b> 33:32</li>
+            <li> 18.532 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar">
+
+        <h4> Columbus Blue Jackets – Ottawa Senators 4:3 pp (1:1, 1:1, 1:1 - 1:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 5. Foligno (Dubois, Nyquist), 33. Foligno (Jenner, Gavrikov), 50. Matteau
+                (Harrington,
+                Stenlund), 65. Bemström (Werenski, Jenner) – 11. C. Brown (Tierney, JAROŠ), 30. C. Brown
+                (Anisimov,
+                Reilly), 50. White (Hawryluk, Peca)
+            </li>
+            <li><b>Brankári:</b> Merzlikins (32. Korpisalo) - Högberg</li>
+            <li><b>Strely na bránku:</b> 45:33</li>
+            <li> 17.518 divákov</li>
+        </ul>
+    </article>
+
+
+    <footer>
+        <p> Dátum: 24.2.2020 | Autor: Tomas Halgas | Email: <a
+                href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom">
+            tomas.halgas11@gmail.com </a> | Zdroj: TASR | Foto: SITA
+            | Video:
+            nhl.com </p>
+    </footer>
+
+</script>
+
+<script id="template-ostatne" type="text/template">
+    <header class="welcome">
+        <h1 class="resize">Ostatné</h1>
+    </header>
+    <div class="rotateText">
+
+        <p>Táto stránka prináša aktuálne informácie o dianí v zámorksej NHL. Nájdete tu výsledky zápasov,
+            rozohovy s hráčmi, tabuľky a ďalšie zaujímavosti zo sveta hokeja. Okrem iného sa stránka
+            sústredi hlavne na Slovákov v NHL.</p>
+
+        <p>Moje meno je Tomáš Halgaš a študujem informatiku na TUKE.</p>
+        <a href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom"> Kontakt
+        </a>
+    </div>
+
+
+    <svg class="sneh" height="130">
+        <circle cx="70" cy="100" r="22" stroke="black" stroke-width="3" fill="white"/>
+        <circle cx="70" cy="63" r="18" stroke="black" stroke-width="3" fill="white"/>
+        <circle cx="70" cy="36" r="12" stroke="black" stroke-width="3" fill="white"/>
+
+
+        <circle cx="70" cy="90" r="1" stroke="black" stroke-width="3" fill="black"/>
+        <circle cx="70" cy="100" r="1" stroke="black" stroke-width="3" fill="black"/>
+        <circle cx="70" cy="110" r="1" stroke="black" stroke-width="3" fill="black"/>
+
+        <circle cx="70" cy="68" r="1" stroke="black" stroke-width="3" fill="black"/>
+        <circle cx="70" cy="58" r="1" stroke="black" stroke-width="3" fill="black"/>
+
+        <circle cx="75" cy="36" r="1" stroke="black" stroke-width="3" fill="blue"/>
+        <circle cx="65" cy="36" r="1" stroke="black" stroke-width="3" fill="blue"/>
+    </svg>
+
+
+    <footer>
+        <p> Dátum: 24.2.2020
+        </p>
+    </footer>
+
+</script>
+
+<script id="template-article1" type="text/template">
+    <header>
+        <h1>Christián Jaroš bodoval, Columbus ale zdolal Ottawu po predĺžení </h1>
+    </header>
+
+    <nav>
+        <ol>
+            <li><a href="#vysledok" title="Colombus- Ottawa">
+                Výsledok
+            </a>
+            </li>
+            <li><a href="#reakcie" title="K víťazstvu...">
+                Reakcie
+            </a></li>
+        </ol>
+        <img src="img/nhl1.png" alt="foto zo zapasu" title="foto zo zapasu">
+    </nav>
+
+
+    <h3><span class="date"> 25.2.2020 06:30 | </span> Slovenský hokejový obranca Christián Jaroš si pripísal v
+        zámorskej NHL asistenciu, jeho Ottawa však prehrala v noci na utorok na ľade Columbusu 3:4 po predĺžení.
+        Pre
+        Jaroša to bol tretí bod (0+3) v ôsmom profiligovom zápase v tejto sezóne. Celkovo odohral necelých sedem
+        minút. </h3>
+
+    <article class="sumar" id="vysledok">
+
+        <h4> Columbus Blue Jackets – Ottawa Senators 4:3 pp (1:1, 1:1, 1:1 - 1:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 5. Foligno (Dubois, Nyquist), 33. Foligno (Jenner, Gavrikov), 50. Matteau
+                (Harrington,
+                Stenlund), 65. Bemström (Werenski, Jenner) – 11. C. Brown (Tierney, JAROŠ), 30. C. Brown
+                (Anisimov,
+                Reilly), 50. White (Hawryluk, Peca)
+            </li>
+            <li><b>Brankári:</b> Merzlikins (32. Korpisalo) - Högberg</li>
+            <li><b>Strely na bránku:</b> 45:33</li>
+            <li> 17.518 divákov</li>
+        </ul>
+
+        <p>/CH. JAROŠ (OTT) 0+1, na ľade strávil 6:32 min./</p>
+
+
+    </article>
+
+    <div class="textPic">
+
+        <div id="reakcie">
+
+            <p>K víťazstvu Columbusu, ktorý sa vrátil na postupové pozície, pomohol dvoma gólmi kapitán a bývalý
+                hráč
+                „senátorov” Nick Foligno. Víťazný gól strelil 25 sekúnd pred koncom predĺženia švédsky nováčik Emil
+                Bemström: „Na toto som čakal celú sezónu. Prvýkrát som dal gól v predĺžení, takže je jasné, že som
+                šťastný.” V drese Ottawy sa dvakrát strelecky presadil Connor Brown, až 41 úspešných zákrokov
+                predviedol
+                brankár Marcus Högberg.</p>
+
+            <p>Blue Jackets ukončili sériu ôsmich prehier, no prišli o brankára Elvisa Merzlikinsa, ktorý pre
+                zranenie
+                odstúpil z hry v druhej tretine po kolízii s Anthonym Duclairom.</p>
+
+            <p>Domáci sa posunuli v tabuľke Východnej konferencie na pozíciu s druhou voľnou kartou, Senators už
+                dávnejšie stratili postupové šance. Do zápasu v ich drese už nezasiahla vytrejdovaná trojica
+                Jean-Gabriel Pageau, Vladislav Namestnikov a Tyler Ennis. „Chýbali nám, ale bojovali sme až do
+                konca,”
+                povedal pre zámorské médiá kouč Ottawy D.J. Smith.</p>
+
+            <p>V tíme hostí absolvoval po príchode z Montrealu debut útočník Matthew Peca a hneď sa uviedol
+                asistenciou.
+                Na zápas ale po výmene meškal a na ľad tak naskočil až na konci prvej tretiny.</p>
+        </div>
+
+        <img src="img/nhl2.png" alt="christian jaros" title="christian jaros">
+    </div>
+
+    <a class="home" href="#welcome"><i>Domov</i></a>
+
+
+    <footer>
+        <p> Dátum: 24.2.2020 | Autor: Tomas Halgas | Email: <a
+                href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom">
+            tomas.halgas11@gmail.com </a> | Zdroj: TASR | Foto: SITA
+            |
+            Video: nhl.com </p>
+    </footer>
+
+</script>
+
+<script id="template-article2" type="text/template">
+    <header>
+        <h1>Výsledky nočných zápasov zámorskej NHL (26. február 2020) </h1>
+    </header>
+
+    <nav>
+        <ol>
+            <li><a href="#zapas1">
+                Boston Bruins : Calgary Flames
+            </a>
+            </li>
+            <li><a href="#zapas2">
+                Dalllas Stars : Chicago Blackhawks
+            </a>
+            </li>
+            <li><a href="#zapas3">
+                Columbus Blue Jackets – Ottawa Senators
+            </a>
+            </li>
+        </ol>
+        <img src="img/nhl3.png" alt="foto nhl" title="foto nhl">
+    </nav>
+
+    <h3><span class="date"> 25.2.2020 23:41 | </span> Zámorská NHL mala dnes v noci na programe ďalšie zápasy základnej
+        časti. </h3>
+    <article class="sumar" id="zapas1">
+
+        <h4> Boston Bruins – Ottawa Senators 2:5 (0:1, 1:2, 1:2)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 21. Marchand, 44. Wagner (Kuraly, Lindholm) – 12. Tkachuk M.(Backlund, Hanifin),
+                34.
+                Monahan, 35. Monahan (Tkachuk), 59. Backlund, 60. Backlund (Stone)
+            </li>
+            <li><b>Brankári:</b> Rask - Rittich</li>
+            <li><b>Strely na bránku:</b> 28:31</li>
+            <li> 15.258 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar" id="zapas2">
+
+        <h4> Dallas Stars – Chicago Blackhawks 2:1 (1:0, 1:1, 0:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 16. Pavelski (Radulov, Janmark), 37. Seguin (Perry, Benn) - 28. Kubalík (Kane,
+                Keith)
+            </li>
+            <li><b>Brankári:</b> Chudobin - Crawford</li>
+            <li><b>Strely na bránku:</b> 33:32</li>
+            <li> 18.532 divákov</li>
+        </ul>
+    </article>
+
+    <article class="sumar" id="zapas3">
+
+        <h4> Columbus Blue Jackets – Ottawa Senators 4:3 pp (1:1, 1:1, 1:1 - 1:0)</h4>
+
+        <ul>
+            <li><b>Góly:</b> 5. Foligno (Dubois, Nyquist), 33. Foligno (Jenner, Gavrikov), 50. Matteau
+                (Harrington,
+                Stenlund), 65. Bemström (Werenski, Jenner) – 11. C. Brown (Tierney, JAROŠ), 30. C. Brown
+                (Anisimov,
+                Reilly), 50. White (Hawryluk, Peca)
+            </li>
+            <li><b>Brankári:</b> Merzlikins (32. Korpisalo) - Högberg</li>
+            <li><b>Strely na bránku:</b> 45:33</li>
+            <li> 17.518 divákov</li>
+        </ul>
+    </article>
+
+
+    <a class="home" href="#welcome"><i>Domov</i></a>
+
+    <footer>
+        <p> Dátum: 24.2.2020 | Autor: Tomas Halgas | Email: <a
+                href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom">
+            tomas.halgas11@gmail.com </a> | Zdroj: TASR | Foto: SITA
+            | Video:
+            nhl.com </p>
+    </footer>
+
+</script>
+
+<script id="template-article3" type="text/template">
+    <header>
+        <h1>Caroline chýbajú brankári. Trio Mrázek, Reimer a Pesce bude mimo hry dlhšiu dobu </h1>
+    </header>
+
+    <nav>
+        <ol>
+            <li><a href="#info">
+                Chýbajúci brankári
+            </a>
+            </li>
+            <li><a href="#tabulka">
+                Tabuľka konferencie
+            </a>
+            </li>
+        </ol>
+        <img src="img/nhl4.png" alt="foto brankara" title="foto brankara">
+    </nav>
+
+
+    <h3><span class="date"> 25.2.2020 08:41 | </span> Hokejovému tímu Carolina Hurricanes
+        budú
+        dlhší čas chýbať brankári Petr Mrázek, James Reimer a obranca Brett Pesce. Všetci traja sa zranili vo
+        víkendovom víťaznom zápase NHL na ľade Toronta (6:3). </h3>
+
+    <div id="info">
+        <p>Tréner „hurikánov” Rod Brind'Amour zatiaľ nevedel odhadnúť, ako dlho budú pauzovať. Reimer utrpel
+            zranenie v dolnej časti tela po tom, čo domáci Zach Hyman natlačil obrancu hostí Jaccoba Slavina na
+            brankárovu nohu a obaja spadli do bránky. </p>
+        <p>Mrázek laboruje s otrasom mozgu, korý utrpel v druhej
+            tretine
+            po strete s Kyleom Cliffordom. Pesceho vyradilo z hry zranenie ramena.</p>
+        <p>Zranenia Reimera a Mrázka donútili Hurricanes, aby v dueli s Torontom siahli po „pohotovostnom”
+            brankárovi Davidovi Ayresovi. Štyridsaťdvaročný rolbár tímu AHL Toronto Marlies nastúpil v 32.
+            minúte,
+            inkasoval dva góly a chytil osem striel. Stal sa najstarším brankárom v histórii NHL, ktorý pri
+            svojom
+            debute zaznamenal víťazstvo.</p>
+        <p>Napriek zraneniam oboch brankárov vedenie Hurricanes pred uzávierkou výmien nesiahlo po posile z
+            iného
+            klubu. V závere základnej časti dá v bránkovisku šancu dvojici z farmárskeho tímu Anton Forsberg -
+            Alex
+            Nedeljkovic, informovala agentúra AP.</p>
+    </div>
+
+
+    <article id="tabulka">
+        <h2>Tabuľka východnej konferencie NHL</h2>
+        <table>
+            <tr>
+                <th>Poradie</th>
+                <th>Tím</th>
+                <th>Počet bodov</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Boston Bruins</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Tampa Bay</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Washington Capitals</td>
+                <td>84</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Pitttsburg Penguins</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Philadelphia Flyers</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>New York Islanders</td>
+                <td>77</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Colombus Blue Jackets</td>
+                <td>76</td>
+            </tr>
+            <tr id="team">
+                <td>8.</td>
+                <td>Carolina Hurricanes</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td colspan="3">......</td>
+
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td>Detroit Red Wings</td>
+                <td>34</td>
+            </tr>
+        </table>
+
+    </article>
+
+    <a class="home" href="#welcome"><i>Domov</i></a>
+
+    <footer>
+        <p> Dátum: 24.2.2020 | Autor: Tomas Halgas | Email: <a
+                href="mailto:tomas.halgas11@gmail.com?Subject=Reakcia%20na%20Vas%20blog%20s%20nazvom">
+            tomas.halgas11@gmail.com </a> | Zdroj: TASR | Foto: SITA
+            |
+            Video: nhl.com </p>
+    </footer>
+
+
+</script>
+
+<script src="js/mustache.min.js"></script>
+
+<script src="js/addOpinion.js"></script>
+
+<script src="js/handleArticleForms.js"></script>
+
+<script src="js/handleComments.js"></script>
+
+<script src="js/routerInit.js" type="module"></script>
+
+<script src="js/GoogleAcc.js"></script>
+
+<script async defer src="https://apis.google.com/js/platform.js?onload=startGSingIn"></script>
+
+
+</body>
+</html>

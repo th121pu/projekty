@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gamestudio</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="/css/blockpuzzle-halgas.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="first toCenter" th:if="${@userController.logged}">
+    You are logged as <span th:text="${@userController.loggedUser}"/>.
+
+    <a href="/user/logout">
+        <button class="options logout">Logout</button>
+    </a>
+
+    <h3>Choose difficulty</h3>
+
+    <div class="commands">
+
+
+        <a href="/blockpuzzle-halgas/new?difficulty=1">
+            <button class="options tooltip">Easy  <span class="tooltiptext"> Hints in every level</span></button>
+        </a>
+
+        <a href="/blockpuzzle-halgas/new?difficulty=2">
+            <button class="options tooltip">Medium  <span class="tooltiptext"> Hints just in last levels</span></button>
+        </a>
+
+        <a href="/blockpuzzle-halgas/new?difficulty=3">
+            <button class="options tooltip last">Hard  <span class="tooltiptext"> No hints</span></button>
+        </a>
+    </div>
+
+</div>
+
+
+<div th:if="${not @userController.logged}">
+
+    <div id="login-form-wrap">
+        <h2>Login</h2>
+        <form action="/user/login" id="login-form" method="get">
+            <p>
+                <input minlength="3" name="login" placeholder="Username" required type="text"><i
+                    class="validation"><span></span><span></span></i>
+            </p>
+            <input type="submit" value="Login">
+        </form>
+
+        <div id="withoutLogging" class="clickable" onclick="displayDiff()">
+           Continue without logging
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/blockpuzzle-halgas.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    align-items: center;
+    text-align: center;
+    padding: 0.6em 0;
+    border-bottom: 1px solid black;
+    background: #1e1f26;
+}
+
+.main a:hover {
+    text-decoration: none;
+}
+
+.main a {
+    color: white;
+    text-decoration: none;
+}
+
+.bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-column: 2/9;
+}
+
+tr {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table {
+    border-spacing: 0;
+    margin-bottom: 3em;
+}
+
+td {
+    width: 32px;
+    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.availablePuzzles {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.puzzleBox {
+    display: inline-flex;
+    align-items: center;
+}
+
+.puzzle {
+    margin-right: 1.5em;
+    margin-bottom: 0;
+}
+
+.puzzleTile, .fullTile, .solutionTile, .emptyTile {
+    width: 32px;
+    height: 32px;
+}
+
+
+.red {
+    background-color: rgba(186, 0, 16, 1);
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.green {
+    background-color: green;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.white {
+    background-color: white;
+}
+
+img {
+    display: block;
+}
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside {
+    flex: 12%;
+    align-self: start;
+    background: #3a4043;
+    color: white;
+    padding-top: 2.8em;
+    display: block;
+    height: 1200px;
+}
+
+.right {
+    text-align: center;
+}
+
+
+.wrap {
+    background: white;
+    flex: 56%;
+    padding: 0;
+    margin: 0;
+}
+
+.menuB {
+    border: 3px solid #444857;
+    background: #444857;
+    padding: 0.8em 0.6em;
+    border-radius: 4px;
+    color: white;
+}
+
+.menuB:hover {
+    background: #5a6074;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 9em;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+main {
+    padding: 1em 1.5em;
+}
+
+
+.welcome {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h4 {
+    text-align: center;
+    margin: 0 auto;
+}
+.currentP {
+    margin-top: 1em;
+}
+
+.infoP {
+    margin-bottom: 2em;
+}
+
+
+.infoP h2 {
+    text-align: center;
+}
+
+.infoR {
+    color: red;
+}
+.left p {
+    margin-left: 1.6em;
+    margin-right: 1.6em;
+}
+
+.availablePuzzles {
+    margin-bottom: 3em;
+}
+
+.subbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1em;
+    grid-column: 2/12;
+    padding-bottom: 0.4em;
+    border-bottom: 1px #838383 solid;
+    padding-top: 0.4em;
+    border-top: 1px #838383 solid;
+}
+
+h2 {
+    text-align: center;
+}
+
+.gameMenu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.fieldEl {
+    flex: 35%;
+}
+
+.field {
+    margin: 0 auto;
+}
+
+.commandsEl {
+    flex: 26%;
+}
+
+.commands {
+    text-align: center;
+}
+
+.commands a {
+    margin-bottom: 0.25em;
+    display: block;
+}
+
+.currentOrSolution {
+    flex: 35%;
+}
+
+.currentOrSolution .puzzle {
+    margin: 0 auto;
+}
+
+.currentOrSolution .level {
+    display: block;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.oneLine div, .oneLine p {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.options {
+    background: #ededed linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    border-radius: 4px;
+    border: 2px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #777777;
+    font-weight: bold;
+    padding: 6px 32px;
+    text-decoration: none;
+    width: 11em;
+}
+
+.options:hover {
+    background: #dfdfdf linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+}
+
+.options:active {
+    position: relative;
+    top: 1px;
+}
+
+.rating {
+    display: inline-block;
+    position: relative;
+    font-size: 2.6em;
+}
+
+.rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+}
+
+.rating label:last-child {
+    position: static;
+}
+
+.rating label:nth-child(1) {
+    z-index: 5;
+}
+
+.rating label:nth-child(2) {
+    z-index: 4;
+}
+
+.rating label:nth-child(3) {
+    z-index: 3;
+}
+
+.rating label:nth-child(4) {
+    z-index: 2;
+}
+
+.rating label:nth-child(5) {
+    z-index: 1;
+}
+
+.rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.rating label .icon {
+    float: left;
+    color: transparent;
+}
+
+.rating label:last-child .icon {
+    color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+    color: #09f;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #09f;
+}
+
+.ratingClass {
+    margin-top: 0.8em;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.comments {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    width: 80%;
+    border: 1px solid #B8B8B8;
+}
+
+.content {
+    background: #3a4043;
+    background: #09f;
+    padding: 0.6em;
+    color: white;
+}
+
+.content2 {
+    padding: 0 0.6em 0.6em;
+}
+
+.comments h5 {
+    margin: 0.6em auto;
+}
+
+.comments p {
+    margin: 0.6em 0;
+}
+
+.comments p:last-child {
+    margin-bottom: 0;
+}
+
+.nameDate h3 {
+    display: inline;
+    margin: 0 auto;
+}
+
+.nameDate i {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.myForm {
+    max-width: 80%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 1em;
+    font-family: 'Open Sans Condensed', arial, sans;
+    margin: 1.8em auto;
+}
+
+.myForm h3 {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+}
+
+textarea {
+    padding: 0.2em 0.5em;
+    border-radius: 0.4em;
+    border: 1px solid #BEBEBE;
+    resize: vertical;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+}
+
+button[type=submit] {
+    background-color: #1abc9c;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0.5em 0.5em;
+    border: none;
+    border-radius: 0.4em;
+}
+
+button[type=submit]:hover {
+    background: #109177;
+    cursor: pointer;
+}
+
+button[type=reset] {
+    background-color: lightcoral;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0.5em 0.5em;
+    border: none;
+    border-radius: 0.4em;
+}
+
+.buttons {
+    display: table;
+    margin: 0 auto;
+}
+
+#login-form-wrap p {
+    position: relative;
+}
+
+#login-form-wrap {
+    background-color: #fff;
+    width: 30%;
+    margin: 5em auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+#login-form-wrap h2 {
+    font-weight: 300;
+    text-align: center;
+}
+
+#login-form {
+    padding: 0 60px;
+}
+
+#login-form-wrap input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+}
+
+#login-form-wrap input[type="text"] {
+    width: 100%;
+    padding: 0 0 0 10px;
+    margin: 0;
+    color: #8a8b8e;
+    border: 1px solid #c2c0ca;
+    font-style: normal;
+    font-size: 16px;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    background: none;
+}
+
+#login-form-wrap input[type="text"]:focus {
+    border-color: #3ca9e2;
+}
+
+#login-form-wrap input[type="text"]:invalid {
+    color: #cc1e2b;
+    border-color: #cc1e2b;
+}
+
+#login-form-wrap input[type="submit"] {
+    border: none;
+    background-color: #3ca9e2;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#login-form-wrap input[type="submit"]:hover {
+    background-color: #329dd5;
+    transition: all 0.2s ease;
+}
+
+#withoutLogging {
+    background-color: #eeedf1;
+    color: #8a8b8e;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    padding: 1.5em 0;
+}
+
+#withoutLogging a {
+    text-decoration: none;
+}
+
+.mnHide {
+    display: none;
+}
+
+.mnShow {
+    display: block;
+}
+
+#menuIts {
+    position: absolute;
+    background: #444857;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+#menuIts p {
+    padding: 0.45em;
+}
+
+#menuIts p:hover {
+    background: #5a6074;
+}
+
+.err {
+    color: red;
+    margin-top: 1em;
+}
+
+.toCenter {
+    text-align: center;
+}
+
+.first {
+    margin-top: 5em;
+}
+
+.last {
+    margin-bottom: 2em;
+}
+
+.toCenter p {
+    display: block;
+}
+
+.logout {
+    width: 6em;
+    padding: 6px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.counter {
+    text-align: left;
+    margin: 0 auto;
+    display: table;
+    padding: 0;
+    list-style-type: none;
+}
+
+.counter li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+}
+
+.counter li::before {
+    content: counter(step-counter);
+    margin-right: 1.6em;
+    font-size: 80%;
+    background-color: #09f;
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.marLeft {
+    margin-left: 0.3em;
+}
+
+@media ( max-width: 1200px ) {
+
+    aside {
+        height: auto;
+        flex: 90%;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-bottom: 1.5em;
+        text-align: left;
+    }
+
+    .left {
+        order: 1;
+        margin-top: 0;
+        border-top: 1px solid black;
+    }
+
+    .right {
+        text-align: center;
+        order: 2;
+        margin-bottom: 0;
+    }
+
+    .wrap {
+        flex: 90%;
+        padding: 0.8em;
+    }
+
+}

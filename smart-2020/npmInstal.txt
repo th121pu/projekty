@@ -1,0 +1,42 @@
+npm install @react-navigation/native
+
+npm install @react-navigation/stack
+
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+npm install @react-navigation/drawer
+
+npm i react-native-vector-icons
+
+npm i parse
+
+npm install @react-native-async-storage/async-storage
+
+npm install react-native-paper
+
+npm install @react-native-community/datetimepicker --save
+
+npm install moment --save
+
+npm install --save react-native-dialog-input
+
+npm i react-native-progress-circle
+
+npm install --save react-native-svg-charts
+
+npm install react-native-svg
+
+npm i react-native-simple-time-picker
+
+npm install @react-native-picker/picker --save
+
+npm install react-native-calendar-strip
+
+expo install react-native-maps
+
+expo install expo-location
+
+npm install react-i18next i18next --save
+
+npm install react-native-localize --save
+

@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BlockPuzzle</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="/css/blockpuzzle-halgas.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+
+<div class="flex">
+    <aside class="left">
+        <h2>Info</h2>
+        <p> Len prihlásený hráč môže pridať komentár, zmeniť rating a uložiť skóre! </p>
+
+        <div class="infoP">
+        <h2>Ovládanie</h2>
+        <p><b>Reset field: </b>Všeky puzzle budú odstránené z poľa.</p>
+        <p><b>Hint: </b>Po použití hintu bude umiestnená 1 puzzle na správne miesto a počet hintov sa zníži. Počet hintov závisí od úrovne hry.</p>
+        <p><b>Solution: </b>Zobrazí správne riešenie, avšak <span class="infoR">skóre za daný level sa zmení na 0</span>!  </p>
+        <p><b>Exit game: </b>Ukončí hru a uloží doterajšie skóre do databázy, ak je hráč prihlásený.</p>
+        </div>
+
+
+        <div class="infoP">
+        <h2>Úrovne</h2>
+        <p><b>Easy: </b>Hinty pre každý level (1 hint pre level 1-5, 2 hinty pre level 6-10).</p>
+        <p><b>Medium: </b>Hint len v posledných 2 leveloch. 20% navýšenie skóre.</p>
+        <p><b>Hard: </b>Žiaden hint. 40% navýšenie skóre.</p>
+        </div>
+    </aside>
+    <div class="wrap">
+        <nav class="main">
+
+            <div class="bar">
+                <div>
+                    <a href="/">
+                        <button class="menuB">
+                            Home page
+                        </button>
+                    </a>
+                </div>
+                <div>
+
+                    <button class="menuB" onclick="displayOrHideMenu()">
+                        New game
+                        <nav id="menuIts" class="menu mnHide">
+                            <p class="tooltip"><a href="/blockpuzzle-halgas/new?difficulty=1">Easy <span
+                                    class="tooltiptext"> Hints in every level</span></a></p>
+
+                            <p class="tooltip"><a
+                                    href="/blockpuzzle-halgas/new?difficulty=2">Medium <span
+                                    class="tooltiptext"> Hints just in last levels </span></a></p>
+
+                            <p class="tooltip"><a href="/blockpuzzle-halgas/new?difficulty=3">Hard
+                                <span class="tooltiptext"> No hints </span>
+                            </a>
+                            </p>
+                        </nav>
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </nav>
+        <main id="router-view">
+            <header class="welcome">
+                <h1>BlockPuzzle</h1>
+
+                <div class="menu">
+                    <nav class="subbar">
+                        <div class="oneLine"><p>Level: </p>
+                            <div th:utext="${levelNumber}"></div>
+                        </div>
+                        <div class="oneLine"><p>Score: </p>
+                            <div th:utext="${@blockPuzzleController.totalScore}"></div>
+                        </div>
+                        <div class="oneLine"><p>Hints: </p>
+                            <div th:utext="${@blockPuzzleController.hints}"></div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="gameMenu">
+
+                <div class="commandsEl">
+                    <div class="commands">
+
+                        <a href="/blockpuzzle-halgas/resetField">
+                            <button class="options"> Reset field</button>
+                        </a>
+                        <a href="/blockpuzzle-halgas/hint">
+                            <button class="options"> Hint</button>
+                        </a>
+                        <a href="/blockpuzzle-halgas/solution">
+                            <button class="options"> Solution</button>
+                        </a>
+                        <a href="/blockpuzzle-halgas/exit">
+                            <button class="options"> Exit game</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fieldEl" th:utext="${@blockPuzzleController.htmlField}"></div>
+
+                <div class="currentOrSolution">
+
+                    <th:block th:utext="${solutionOrCurrent}"></th:block>
+                    <th:block th:utext="${nextOne}"></th:block>
+                    <div class="err">
+                        <th:block th:utext="${scoreError }"></th:block>
+                    </div>
+                </div>
+            </div>
+            <div class="availablePuzzles" th:utext="${@blockPuzzleController.htmlPuzzles}"></div>
+
+
+            <h2>Comments</h2>
+            <div class="err">
+                <th:block th:utext="${commError}"></th:block>
+            </div>
+            <form class="myForm" action="/blockpuzzle-halgas/formComment" method="post">
+                <h3>Add comment</h3>
+
+                <textarea name="comment" cols="80" rows="4" required minlength="3">
+                    </textarea>
+                <p>
+                <div class="buttons">
+                    <button value="submit" type="submit">Send</button>
+                </div>
+
+            </form>
+
+            <ul>
+                <li th:each="comment : ${comments}">
+                    <div class="comments">
+                        <div class="content">
+                            <span class="nameDate">
+                                <h3 th:text="${comment.player}"></h3>
+                                <i th:text="${comment.commentedOn}"> </i>
+                            </span>
+                        </div>
+
+                        <div class="content2">
+                            <p class="comment">
+                                <b>Komentár:</b>
+                                <span th:text="${comment.comment}">  </span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </main>
+    </div>
+
+    <aside class="right">
+        <h2>Rating</h2>
+        <span th:text="${rating}"></span>
+        <div class="ratingClass" th:utext="${playerRating}"></div>
+        <div class="err">
+            <th:block th:utext="${rateError}"></th:block>
+        </div>
+        <form class="rating" id="ratingEl">
+            <label>
+                <a href="/blockpuzzle-halgas/rating?rating=1">
+                    <input type="radio" name="stars" onclick="changeRating(this);" value="1"/>
+                    <span class="icon">★</span>
+                </a>
+            </label>
+            <label>
+                <a href="/blockpuzzle-halgas/rating?rating=2">
+                    <input type="radio" name="stars" onclick="changeRating(this);" value="2"/>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </a>
+            </label>
+            <label>
+                <a href="/blockpuzzle-halgas/rating?rating=3">
+                    <input type="radio" name="stars" onclick="changeRating(this);" value="3"/>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </a>
+            </label>
+            <label>
+                <a href="/blockpuzzle-halgas/rating?rating=4">
+                    <input type="radio" name="stars" onclick="changeRating(this);" value="4"/>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </a>
+            </label>
+            <label>
+                <a href="/blockpuzzle-halgas/rating?rating=5">
+                    <input type="radio" name="stars" onclick="changeRating(this);" value="5"/>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </a>
+            </label>
+        </form>
+
+        <h2>Hall of fame</h2>
+        <ol class="counter">
+            <li th:each="score : ${scores}">
+                <span th:text="${score.player}"></span>
+                <span class="marLeft" th:text="${score.points}"> </span>
+                <span > points </span>
+            </li>
+        </ol>
+
+    </aside>
+</div>
+
+
+<script src="/js/blockpuzzle-halgas.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="7">
+ <tileset firstgid="1" name="tileset1" tilewidth="16" tileheight="16" tilecount="500" columns="20">
+  <image source="tilesets/tileset01.png" width="320" height="400"/>
+ </tileset>
+ <layer id="1" name="background" width="20" height="10" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECo2SuQ0CURBDPzlHERRBBUBABRwtcEjURgDEgAg4K6AU/CQsWStAGzz9Yf541t5lVkppipZox5m9OjXajuiKvhiIYdQ91ZtGKXOdi+jnTLVmF7qxmIhp1N7nZ1Vn7nrWQRzFSaBl30jYwzJq9p015z3fZnKeGs2vvGQB77FPeuiq74c+3rjDw108xFM4Oxm8xz7pofNM9vEG9pD+0eTvnOGOb5T3zou/14et3tdO7AV9vq/9+ayT1/su0l/FTTiT8/j8lxfNStT5v/6b4Q7W4g1WdfoDIAMAAA==
+  </data>
+ </layer>
+ <layer id="2" name="walls" width="20" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECvvCyMDwhUaYAQnA7EASIsiE6YHRyBqwiSHLY2Pj04NPDptZIDFy9MD0YTOTnuaB7MIFcMnB3AejkfVjE4PJD5R5MDdRQgMAYHTRxSADAAA=
+  </data>
+ </layer>
+ <objectgroup id="3" name="actors" visible="0">
+  <object id="1" name="access card" x="224" y="96" width="16" height="16"/>
+  <object id="2" name="energy" x="128" y="16" width="16" height="16"/>
+  <object id="3" name="door" x="96" y="64" width="16" height="32"/>
+  <object id="4" name="ellen" type="ripley" x="256" y="112" width="32" height="32"/>
+  <object id="5" name="locker" x="112" y="128" width="16" height="16"/>
+  <object id="6" name="ventilator" x="16" y="16" width="32" height="32"/>
+ </objectgroup>
+</map>
