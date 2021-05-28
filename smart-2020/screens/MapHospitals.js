@@ -36,14 +36,14 @@ function MapPharmacies(props) {
       loc.coords.latitude +
       "," +
       loc.coords.longitude +
-      "&radius=15000&type=hospital&key=AIzaSyCzu0JULvwRXR2n7ijNuGDPSc5Ea5pSJIo";
+      "&radius=15000&type=hospital&key=xxx";
 
     // const url =
     //   "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=nemocnica&inputtype=textquery&fields=geometry,formatted_address,name,opening_hours,rating&locationbias=circle:5000@" +
     //   loc.coords.latitude +
     //   "," +
     //   loc.coords.longitude +
-    //   "&key=AIzaSyCzu0JULvwRXR2n7ijNuGDPSc5Ea5pSJIo";
+    //   "&key=xxx";
 
     fetch(url)
       .then((response) => response.json())
