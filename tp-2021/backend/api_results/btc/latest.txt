@@ -1,0 +1,1 @@
+[{"time_period_start": "2021-11-18T14:40:00.0000000Z", "time_period_end": "2021-11-18T14:50:00.0000000Z", "time_open": "2021-11-18T14:40:00.2790000Z", "time_close": "2021-11-18T14:40:53.3040000Z", "price_open": 52008.41, "price_high": 52050.14, "price_low": 51948.49, "price_close": 51948.49, "volume_traded": 4.57166864, "trades_count": 20}]

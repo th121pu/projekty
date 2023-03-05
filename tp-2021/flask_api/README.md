@@ -1,0 +1,9 @@
+- Run from /flask_api 
+- python run.py
+- config.py - configuration for database
+- app is created in run.py
+- requirements.txt use if you have some trouble with library versions, requirements are from webpage https://www.codementor.io/@mide/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx
+- all tables are redefined in models.py
+- in resources are called classes from models.py
+- database in initialized in models.py
+- in app.py are defined routes for api

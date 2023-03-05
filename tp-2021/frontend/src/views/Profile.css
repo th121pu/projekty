@@ -1,0 +1,114 @@
+.containerProfile {
+    display:flex; 
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.profile {
+    display:flex;
+    height: 100%;
+    width: 100%;
+    flex-direction:column;
+    flex: 1;
+}
+
+.tableContainer {
+    flex:1.5;
+    align-items: center;
+    margin-right: 50px;
+    margin-top: 2em;
+}
+
+/* .table {
+    height: "100%";
+    width: "100%";
+} */
+  
+.imageContainer {
+    display:flex;
+    flex-grow:1;
+    justify-content:space-evenly
+}
+  
+.profilePicture {
+    display:flex;
+    width:30%;
+    margin:5%;
+    border-radius:50%;
+}
+
+.userInfo {
+    display:flex;
+    flex-grow:3;
+    flex-direction:column;
+    justify-content:space-evenly
+}
+
+.flexSelfCenter {
+    display:flex;
+    align-self:center;
+}
+
+a {
+    text-decoration:none;
+    color:black
+}
+
+@media only screen and (max-width: 1000px) {
+    .containerProfile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profilePicture {
+        display:flex;
+        width:15%;
+        margin:1.5%;
+        border-radius:50%;
+    }
+    .tableContainer {
+        flex:1;
+        align-items: center;
+        margin-right: 0;
+    }
+    .form-inline input {
+        margin: 10px 0;
+    }
+    
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+  }
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+  
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+
+.form-inline select, input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.form-inline button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+}
+  
+.form-inline button:hover {
+    background-color: royalblue;
+}

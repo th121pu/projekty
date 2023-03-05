@@ -1,0 +1,1 @@
+Cloud application for school canteens (Azure, React, Java Spring Boot, Python)

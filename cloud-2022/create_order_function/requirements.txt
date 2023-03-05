@@ -1,0 +1,7 @@
+azure-functions
+psycopg2-binary
+azure-servicebus
+azure-storage-blob
+pandas
+
+

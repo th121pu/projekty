@@ -1,0 +1,90 @@
+/* .App {
+  text-align: center;
+} */
+
+.App-header {
+  background-color: #3f47cc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: fixed;
+  height: 80px;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.flexOne {
+  flex: 1;
+  display: flex;
+}
+
+.displayed {
+  display: inline-flex;
+}
+
+.notDisplayed {
+  display: none;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.displayed2 {
+  cursor: "pointer";
+}
+
+.hoverState {
+  font-size: "1px";
+  margin: "0";
+  margin-left: "6%";
+  color: white;
+  text-decoration: none;
+  background-color: #3f47cc;
+  border: none;
+}
+
+.hoverState:hover {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;  
+}
+
+@media only screen and (max-width: 600px) {
+  .homeGrid {
+    width: "100%";
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */

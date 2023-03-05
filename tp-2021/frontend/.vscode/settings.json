@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/aef1f72d-7aa0-46ac-a942-e11750fb7a1c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/crypto-predict",
+    "appService.deploySubpath": "."
+}

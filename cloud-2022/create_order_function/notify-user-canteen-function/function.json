@@ -1,0 +1,15 @@
+{
+  "scriptFile": "__init__.py",
+  "entryPoint": "main",
+  "bindings": [
+    {
+      "name": "message",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "new-order-added",
+      "subscriptionName": "send-email-sub",
+      "connection": "dominikacloudy_SERVICEBUS",
+      "autoComplete": true
+    }
+  ]
+}
